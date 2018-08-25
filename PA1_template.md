@@ -28,7 +28,7 @@ hist(stepsPerDay,breaks=10,col='light blue',
     main='Histogram of Steps Walked per Day')
 ```
 
-![](PA1_template_files/figure-html/steps per day-1.png)<!-- -->
+![](PA1_template_files/figure-html/steps-per-day-1.png)<!-- -->
 
 ```r
 #Compute the mean and median of daily step totals
@@ -63,7 +63,7 @@ activityPerInterval <- group_by(actData,interval) %>%
 with(activityPerInterval,plot(interval,ave,type='l',xlab='Interval Identifier',ylab='Average steps in interval',main='Average Steps Walked in a Day'))
 ```
 
-![](PA1_template_files/figure-html/average pattern-1.png)<!-- -->
+![](PA1_template_files/figure-html/average-pattern-1.png)<!-- -->
 
 ```r
 #Find the interval with the higheest mean step count
@@ -115,7 +115,7 @@ hist(stepsPerDayImputed,breaks=10,col='blue',
     main='Histogram of Steps Walked per Day, (on imputed data)')
 ```
 
-![](PA1_template_files/figure-html/create histogram again-1.png)<!-- -->
+![](PA1_template_files/figure-html/create-histogram-again-1.png)<!-- -->
 
 ```r
 #Compute the mean and median of daily step totals
@@ -190,6 +190,6 @@ plotObj <- xyplot(ave ~ interval | dayType,data=dayData,type='l',
 print(plotObj)
 ```
 
-![](PA1_template_files/figure-html/day type plot-1.png)<!-- -->
+![](PA1_template_files/figure-html/day-type-plot-1.png)<!-- -->
 
 
