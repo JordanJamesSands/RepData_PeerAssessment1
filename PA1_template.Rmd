@@ -20,7 +20,7 @@ actData$date <- ymd(actData$date)
 
 
 ## What is mean total number of steps taken per day?
-```{r steps per day}
+```{r steps-per-day}
 #Create an array of total steps, one value for each day data was collected
 stepsPerDay <- tapply(actData$steps,actData$date,function(x){sum(x,na.rm=TRUE)})
 #Plot data
@@ -38,7 +38,7 @@ The mean steps per day is `r meanSteps`, the median is `r medianSteps`
 
 
 ## What is the average daily activity pattern?
-```{r average pattern}
+```{r average-pattern}
 library(dplyr,warn.conflicts=FALSE)
 #Group the data by interval berfore summarising each interval by the mean steps within it accross all days
 activityPerInterval <- group_by(actData,interval) %>% 
@@ -54,7 +54,7 @@ maxInterval <- activityPerInterval$interval[maxIndex]
 The interval with the highest mean step count is interval `r maxInterval`
 
 ## Imputing missing values
-```{r Imputing Values}
+```{r Imputing-Values}
 #Logical, tracking which observations do not include NAs
 completeRows <- complete.cases(actData)
 #Compute the number of observations which include NAs
@@ -84,7 +84,7 @@ There are `r incompleteNum` observations with missing values
 
 Running a chunk of code from above to generate a histogram and summary
 statistics, this time on imputed data...
-```{r create histogram again}
+```{r create-histogram-again}
 #Create an array of total steps, one value for each day data was collected
 stepsPerDayImputed <- tapply(actDataImputed$steps,actDataImputed$date,
                             function(x) {sum(x,na.rm=TRUE)})
@@ -110,7 +110,7 @@ It can be seen from the histograms and summary statistics that imputing the data
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-```{r day type plot,fig.width=5,fig.height=8}
+```{r day-type-plot,fig.width=5,fig.height=8}
 library(lattice,warn.conflicts = FALSE)
 #Initialise variables
 weekend <- c('Saturday','Sunday')
