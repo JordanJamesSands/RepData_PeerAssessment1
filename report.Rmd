@@ -1,9 +1,0 @@
-# Reproducible Research Peer Assessed Assignment 1
-
-### Read the data
-```{r}
-library(lubridate,warn.conflicts=FALSE)
-actData <- read.csv('./activity/activity.csv')
-actData$date <- ymd(actData$date)
-```
-
